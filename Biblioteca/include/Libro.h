@@ -1,26 +1,25 @@
 #ifndef LIBRO_H
 #define LIBRO_H
-using namespace std;
+
 #include <string>
 
 class Libro {
 private:
-    string titulo;
-    string autor;
-    string isbn;
+    std::string titulo;
+    std::string autor;
+    std::string isbn;
     bool disponible;
 
 public:
-    // Constructor
-    Libro(const string& titulo, const string& autor, const string& isbn);
+    Libro(std::string t, std::string a, std::string i, bool d = true);
 
-    string getTitulo() const;
-    string getAutor() const;
-    string getISBN() const;
+    std::string getTitulo() const;
+    std::string getAutor() const;
+    std::string getISBN() const;
     bool estaDisponible() const;
 
-    void prestar();   
-    void devolver();  
+    void prestar();
+    void devolver();
 };
 
 #endif

@@ -1,29 +1,12 @@
 #include "Libro.h"
-using namespace std;
 
-Libro::Libro(const string& titulo, const string& autor, const string& isbn)
-    : titulo(titulo), autor(autor), isbn(isbn), disponible(true) {}
+Libro::Libro(std::string t, std::string a, std::string i, bool d)
+    : titulo(t), autor(a), isbn(i), disponible(d) {}
 
-string Libro::getTitulo() const {
-    return titulo;
-}
+std::string Libro::getTitulo() const { return titulo; }
+std::string Libro::getAutor() const { return autor; }
+std::string Libro::getISBN() const { return isbn; }
+bool Libro::estaDisponible() const { return disponible; }
 
-string Libro::getAutor() const {
-    return autor;
-}
-
-string Libro::getISBN() const {
-    return isbn;
-}
-
-bool Libro::estaDisponible() const {
-    return disponible;
-}
-
-void Libro::prestar() {
-    disponible = false;
-}
-
-void Libro::devolver() {
-    disponible = true;
-}
+void Libro::prestar() { disponible = false; }
+void Libro::devolver() { disponible = true; }
